@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
@@ -36,6 +39,32 @@
       <div class="chip green-chip removable-chip filter-chip">Accounting & Finance (4)</div>
       <div class="chip green-chip removable-chip filter-chip">Open</div>
     </div>
+
+{% for item in site.data['job-descriptions'] %}
+
+    <div class="job-listings-listing">
+        <div class="job-listings-listing-content">
+          <div class="job-listings-listing-title">
+            {{ item.title }}
+            <span class="chip blue-chip">Open</span>
+          </div>
+          <!--
+          <div class="job-listings-listing-subcategory">Parks & Rec</div>
+          -->
+        <div class="job-listings-listing-description">
+          {{ item.description }}
+        </div>
+      </div>
+      <p>${{ item.salary_low }} - ${{ item.salary_high }}</p>
+      <p><a href="{{ item.job_description_link }}">Apply</a></p>
+      <div class="job-listings-listing-cta">
+        <img src="images/right-cta.png" class="job-listings-listing-cta-image">
+      </div>
+    </div>
+
+{% endfor %}
+
+<!--
     <div class="job-listings-listing">
         <div class="job-listings-listing-content">
           <div class="job-listings-listing-title">
@@ -52,21 +81,6 @@
       </div>
     </div>
     <div class="job-listings-listing">
-        <div class="job-listings-listing-content">
-          <div class="job-listings-listing-title">
-            Accounting Manager
-            <span class="chip blue-chip">Open</span>
-          </div>
-          <div class="job-listings-listing-subcategory">Parks & Rec</div>
-        <div class="job-listings-listing-description">
-          When you become the image of your own imagination, it's the most powerful thing you could ever do.
-        </div>
-      </div>
-      <div class="job-listings-listing-cta">
-        <img src="images/right-cta.png" class="job-listings-listing-cta-image">
-      </div>
-    </div>
-    <div class="job-listings-listing">
       <div class="job-listings-listing-content">
         <div class="job-listings-listing-title">
           Accounting Manager
@@ -111,6 +125,7 @@
         <img src="images/right-cta.png" class="job-listings-listing-cta-image">
       </div>
     </div>
+  -->
   </div>
   <div class="job-listing-window">
     <div class="job-listing-hero">
